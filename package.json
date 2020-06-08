@@ -67,7 +67,8 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "@types/express": "^4.17.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
