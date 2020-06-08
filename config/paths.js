@@ -48,8 +48,8 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
     dotenv: resolveApp('.env'),
     appPath: resolveApp('.'),
-    appBuild: resolveApp('build'),
-    appBuildSrc: resolveApp('build/src'),
+    appBuild: resolveApp('dist'),
+    appBuildSrc: resolveApp('dist/src'),
     appHtml: resolveApp('src/views/index.html'),
     appIndexJs: resolveModule(resolveApp, 'src/index'),
     app: resolveModule(resolveApp, 'src/render-app'),
