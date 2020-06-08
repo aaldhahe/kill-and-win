@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 const app = express();
-const port = 8080; // default port to listen
+const port = process.env.PORT || 8080; // default port to listen
 
 const NODE_ENV: string | undefined = process.env.NODE_ENV;
 const serveApp: string = NODE_ENV === 'development' ? '../dist/src' : './';
