@@ -86,8 +86,8 @@
     "typescript": "^3.9.3"
   },
   "scripts": {
-    "nps": "nps",
-    "run": "NODE_ENV=development ts-node src/server.ts"
+    "start": "nps",
+    "app": "NODE_ENV=development ts-node src/server.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
