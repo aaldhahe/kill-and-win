@@ -51,7 +51,7 @@ configArray.forEach(function (config) {
         .then(() => {
             // First, read the current file sizes in build directory.
             // This lets us display how much they changed later.
-            return measureFileSizesBeforeBuild(paths.appBuildSrc);
+            // return measureFileSizesBeforeBuild(paths.appBuildSrc);
         })
         .then(previousFileSizes => {
             // Remove all content but keep the directory so that
@@ -82,13 +82,13 @@ configArray.forEach(function (config) {
                 if (config.optimization.minimize) {
                     console.log(chalk.magenta('File sizes after gzip:\n'));
                 }
-                printFileSizesAfterBuild(
-                    stats,
-                    previousFileSizes,
-                    paths.appBuildSrc,
-                    WARN_AFTER_BUNDLE_GZIP_SIZE,
-                    WARN_AFTER_CHUNK_GZIP_SIZE
-                );
+                // printFileSizesAfterBuild(
+                //     stats,
+                //     previousFileSizes,
+                //     paths.appBuildSrc,
+                //     WARN_AFTER_BUNDLE_GZIP_SIZE,
+                //     WARN_AFTER_CHUNK_GZIP_SIZE
+                // );
                 console.log();
 
                 const appPackage = require(paths.appPackageJson);

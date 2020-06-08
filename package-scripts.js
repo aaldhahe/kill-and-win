@@ -2,7 +2,7 @@ const { series } = require("nps-utils");
 
 const build = {
     default: series.nps(`tsc`),
-    prod: series.nps('webpack.prod'),
+    prod: series.nps('webpack.prod', 'tsc'),
     dev: 'node scripts/start.js'
 };
 

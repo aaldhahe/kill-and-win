@@ -87,7 +87,7 @@
   },
   "scripts": {
     "start": "nps",
-    "app": "NODE_ENV=development ts-node src/server.ts"
+    "app": "NODE_ENV=production node build/src/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
