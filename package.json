@@ -65,7 +65,8 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "ts-node": "^8.10.2"  
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -82,12 +83,11 @@
     "nps-utils": "^1.7.0",
     "path": "^0.12.7",
     "ts-loader": "^7.0.5",
-    "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   },
   "scripts": {
     "start": "nps",
-    "app": "NODE_ENV=production node build/src/server.js"
+    "app": "NODE_ENV=development ts-node src/server.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
