@@ -1,1 +1,1 @@
-web: yarn start startDev
+web: npm start startDev
