@@ -5,13 +5,15 @@ import socketio from 'socket.io';
 import { Communication } from './Communication';
 import { Player, TriggerKey } from './Player';
 import { Animation } from './Animation';
+import { Killer } from './Killer';
+import { Game } from './Game';
+import { Collision } from './Collision';
 
 const app = express();
 const port = process.env.PORT || 8080; // default port to listen
 
 const NODE_ENV: string | undefined = process.env.NODE_ENV;
 const serveApp: string = NODE_ENV === 'production' ? '../dist/src' : './';
-let interval: any;
 
 app.use(express.static(path.join(__dirname, serveApp)));
 
@@ -41,11 +43,12 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
     const communication: Communication = new Communication(playerCon);
     
     playerCon.on('name', function(data: any) {
-        // player = new Player(playerCon.id, data.name, '#000FF');
-        // animation = new Animation(player, true);
         player.setName(data.name);
         console.log(`player ${player.name} is connected`);
+        Game.setGameStarted();
+        Collision.setPlayers(player);
         communication.sendPlayer(player);
+        communication.sendKnifeShape(Killer.knife);
     });
 
     playerCon.on('keyInput', function(keys: TriggerKey) {
@@ -54,5 +57,7 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
 
     setInterval(() => communication.stateChange(player), 40);
     setInterval(() => animation.movePlayer(), 40);
+    // setInterval(() => communication.sendKnifeShape(Killer.knife), 40);
+    setInterval(() => Collision.knifeCollision(communication), 40);
 
 });
