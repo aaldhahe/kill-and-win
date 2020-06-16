@@ -13,10 +13,12 @@ export class Animation {
     public normalSpeed: number = 8;
     public player: Player;
     public gameStarted: boolean;
+    public keys: Keys;
 
     constructor(player: Player, gameStarted: boolean) {
         this.player = player;
         this.gameStarted = gameStarted;
+        this.keys = this.setKeys();
     }
     
     public movePlayer(): void {
@@ -25,23 +27,24 @@ export class Animation {
         if (this.player.isKiller) {
             speed = this.killerSpeed;
         }
+        this.keys = this.setKeys();
         this.moveXAxis(speed);
         this.moveYAxis(speed);
     }
    
     private moveXAxis(speed: number): void {
-        if (this.player.triggerKey[39]) {
+        if (this.keys.RIGHT) {
             this.player.x += speed;
-        } else if (this.player.triggerKey[37]) {
+        } else if (this.keys.LEFT) {
             this.player.x -= speed;
         }
         this.player.x = this.resolveWithinCanvas(this.player.x, Canvas.width);
     }
 
     private moveYAxis(speed: number): void {
-        if (this.player.triggerKey[40]) {
+        if (this.keys.DOWN) {
             this.player.y += speed;
-        } else if (this.player.triggerKey[38]) {
+        } else if (this.keys.UP) {
             this.player.y -= speed;
         }
         this.player.y = this.resolveWithinCanvas(this.player.y, Canvas.height);
@@ -52,6 +55,15 @@ export class Animation {
             return coordinate + threshold;
         }
         return coordinate % threshold;
+    }
+
+    private setKeys(): Keys {
+        return {
+            LEFT: this.player.triggerKey[37],
+            UP: this.player.triggerKey[38],
+            RIGHT: this.player.triggerKey[39],
+            DOWN: this.player.triggerKey[40]
+        };
     }
 
 }
