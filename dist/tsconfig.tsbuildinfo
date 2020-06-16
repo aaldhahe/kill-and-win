@@ -271,29 +271,29 @@
         "signature": "19c6c92e437feefa4f952c011e64ee30be48f8ec7b4aeddf46447278f7626e26",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/socket.io-client/index.d.ts": {
+        "version": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
+        "signature": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
+        "affectsGlobalScope": true
+      },
       "../src/app.tsx": {
-        "version": "a677854d2815b8d46f78031e5a5c73d6937297779ae36a6f0c55e80d54a608ec",
-        "signature": "71ebfa3253427458ac6351013e1c9eb95b228766af8b3a73f97ae0f5e96c3d8f",
+        "version": "20396e670cf19a1f8f2fe7d8c013fa2cc6bbcc5d053a381925b1797793c83618",
+        "signature": "87a81e86c4a859f500b4a3b1db74834772429b9059f2efacdd0cde43cc283d11",
         "affectsGlobalScope": false
       },
       "../src/app.test.tsx": {
-        "version": "67154058d6765563227bd6d4c663b73e4eeb3d970b111c0cbf60b413405826c8",
+        "version": "c83538ab4ce80454c5c179c4bda19a4cebc7df35634fb37891190956bbd8eb22",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/react-dom/index.d.ts": {
-        "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
-        "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
-        "affectsGlobalScope": false
-      },
-      "../src/serviceworker.ts": {
-        "version": "ebb27b5ceb59dd94dff75c64f16c09e847c5e6f62e2967c7c4d61fc89966396a",
-        "signature": "10ba3724f41566bd123cda62a0d35b7744ceeb5e2cd991ffb6977649fe5a05c7",
+      "../src/connection.ts": {
+        "version": "4f02a826a4535e4b3293f033f5e300fdd5c4b3fdd71f33af2187b9df6aad0e9d",
+        "signature": "35aa2582dcaf22aa54e2af8618dcce944b449aa07990c2ee7aba1d8f89d26df6",
         "affectsGlobalScope": false
       },
       "../src/index.tsx": {
-        "version": "8175f1742e9d3135cf71f1aa15ab4e5c5282e37c50b16a9ef55fd6dc88b299fe",
-        "signature": "ae8894dee7186d0e5b5d5afc30d10a2d0064fa49ae161a0a9441fda28aa9f9e2",
+        "version": "e2c52f73408a8902a631872cab1040a8765a3860fa7c6f818df9d2073d5250bb",
+        "signature": "f9d7caa176b09a1a7e40430497986a555126b78ea2078b72d7d2daebedcdd35f",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/node/globals.d.ts": {
@@ -551,6 +551,11 @@
         "signature": "d522314e80ed71b57e3c2939d3c9594eaae63a4adf028559e6574f6b270b0fee",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/react-dom/index.d.ts": {
+        "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "affectsGlobalScope": false
+      },
       "../src/react-app-env.d.ts": {
         "version": "da40c88299fc9d260720015cb88f1c406c37cd54c06c1b554accc69aff8bca6c",
         "signature": "da40c88299fc9d260720015cb88f1c406c37cd54c06c1b554accc69aff8bca6c",
@@ -596,9 +601,24 @@
         "signature": "ead1ed9dd4874f4907a506a31e4fe9c4e079b42816f6b7ea5016a6d5ddf2fde3",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/engine.io/index.d.ts": {
+        "version": "2bc5a885dc91b4006192c477dfae4f2856e5809c6ffbf62cc242ac010f15ab51",
+        "signature": "2bc5a885dc91b4006192c477dfae4f2856e5809c6ffbf62cc242ac010f15ab51",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/socket.io/index.d.ts": {
+        "version": "5da61a50104ace8da85aed7e4fbf1258b34d8f6b6b5058b42cc4bfe257e86ba8",
+        "signature": "5da61a50104ace8da85aed7e4fbf1258b34d8f6b6b5058b42cc4bfe257e86ba8",
+        "affectsGlobalScope": false
+      },
       "../src/server.ts": {
-        "version": "6bc2951305431ff6538cb88f84a62fa717f61c6fc82321bcaef076eb6e68528d",
+        "version": "ae42f971d54de5547847b7dbf1dbf104a9aa797ae2cfb71004c501b2710fb728",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/serviceworker.ts": {
+        "version": "ebb27b5ceb59dd94dff75c64f16c09e847c5e6f62e2967c7c4d61fc89966396a",
+        "signature": "10ba3724f41566bd123cda62a0d35b7744ceeb5e2cd991ffb6977649fe5a05c7",
         "affectsGlobalScope": false
       },
       "../node_modules/@testing-library/jest-dom/extend-expect.d.ts": {
@@ -732,12 +752,12 @@
       "allowSyntheticDefaultImports": true,
       "strict": true,
       "forceConsistentCasingInFileNames": true,
-      "module": 1,
+      "module": 3,
       "moduleResolution": 2,
-      "resolveJsonModule": true,
       "isolatedModules": true,
       "jsx": 2,
       "incremental": true,
+      "sourceMap": true,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -811,6 +831,16 @@
       "../node_modules/@types/connect/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.7/index.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/engine.io/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/ts3.7/index.d.ts",
@@ -1362,6 +1392,21 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/socket.io-client/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/socket.io/index.d.ts": [
+        "../node_modules/@types/engine.io/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.7/index.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/stack-utils/index.d.ts": [
@@ -1740,17 +1785,22 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/socket.io-client/index.d.ts",
         "../src/react-app-env.d.ts"
+      ],
+      "../src/connection.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/socket.io-client/index.d.ts"
       ],
       "../src/index.tsx": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/react-dom/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../src/app.tsx",
-        "../src/serviceworker.ts"
+        "../src/connection.ts"
       ],
       "../src/react-app-env.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1764,10 +1814,12 @@
       "../src/server.ts": [
         "../node_modules/@types/express/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/path.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/socket.io/index.d.ts"
       ],
       "../src/serviceworker.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -1853,6 +1905,16 @@
       "../node_modules/@types/connect/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.7/index.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/engine.io/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/ts3.7/index.d.ts",
@@ -2404,6 +2466,21 @@
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/socket.io-client/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/socket.io/index.d.ts": [
+        "../node_modules/@types/engine.io/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.7/index.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/stack-utils/index.d.ts": [
@@ -2788,6 +2865,7 @@
       "../node_modules/@types/body-parser/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/connect/index.d.ts",
+      "../node_modules/@types/engine.io/index.d.ts",
       "../node_modules/@types/express-serve-static-core/index.d.ts",
       "../node_modules/@types/express/index.d.ts",
       "../node_modules/@types/glob/index.d.ts",
@@ -2859,6 +2937,8 @@
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/@types/react/index.d.ts",
       "../node_modules/@types/serve-static/index.d.ts",
+      "../node_modules/@types/socket.io-client/index.d.ts",
+      "../node_modules/@types/socket.io/index.d.ts",
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/testing-library__dom/config.d.ts",
       "../node_modules/@types/testing-library__dom/events.d.ts",
@@ -2916,6 +2996,7 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../src/app.test.tsx",
       "../src/app.tsx",
+      "../src/connection.ts",
       "../src/index.tsx",
       "../src/react-app-env.d.ts",
       "../src/server.ts",

@@ -28,7 +28,6 @@ module.exports = function (webpackEnv, name) {
             filename: name,
             path: paths.appBuildSrc,
             sourceMapFilename: name + '.map',
-            library: 'rounds-webclient',
             libraryTarget: 'umd',
             publicPath: paths.publicUrlOrPath
         },
