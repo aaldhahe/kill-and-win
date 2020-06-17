@@ -38,8 +38,8 @@ export class Killer {
     console.log('setKnife');
     return {
       exists: true,
-      x: Math.floor((Math.random() * Canvas.width) % Canvas.width),
-      y: Math.floor((Math.random() * Canvas.height) % Canvas.height),
+      x: Math.floor((Math.random() * Canvas.width / 2) % Canvas.width),
+      y: Math.floor((Math.random() * Canvas.height / 2) % Canvas.height),
       icon: "./views/knife.png",
       width: 80,
       height: 61

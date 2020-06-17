@@ -2,52 +2,53 @@ import { Player } from "./Player";
 import { Canvas } from "./Canvas";
 
 export interface Keys {
-  LEFT: boolean;
-  UP: boolean;
-  RIGHT: boolean;
-  DOWN: boolean;
+    LEFT: boolean;
+    UP: boolean;
+    RIGHT: boolean;
+    DOWN: boolean;
 }
 
 export class Animation {
-  public killerSpeed: number = 10;
-  public normalSpeed: number = 8;
-  public player: Player;
+  public killerSpeed: number = 6;
+  public normalSpeed: number = 5;
   public gameStarted: boolean;
-  public keys: Keys;
+  public keys: any;
+  public players: any;
 
-  constructor(player: Player, gameStarted: boolean) {
-    this.player = player;
+  constructor(players: any, gameStarted: boolean) {
+    this.players = players;
     this.gameStarted = gameStarted;
-    this.keys = this.setKeys();
+    this.keys = {};
   }
 
   public movePlayer(): void {
     let speed: number = this.normalSpeed;
-
-    if (this.player.isKiller) {
-      speed = this.killerSpeed;
+    for (var i in this.players) {
+      if (this.players[i].isKiller) {
+        speed = this.killerSpeed;
+      }
+      this.keys[i] = this.setKeys(this.players[i]);
+      this.moveXAxis(speed, this.players[i]);
+      this.moveYAxis(speed, this.players[i]);
     }
-    this.keys = this.setKeys();
-    this.moveXAxis(speed);
-    this.moveYAxis(speed);
   }
 
-  private moveXAxis(speed: number): void {
-    if (this.keys.RIGHT) {
-      this.player.x += speed;
-    } else if (this.keys.LEFT) {
-      this.player.x -= speed;
+  private moveXAxis(speed: number, player: Player): void {
+    if (this.keys[player.id].RIGHT) {
+      player.x += speed;
+    } else if (this.keys[player.id].LEFT) {
+      player.x -= speed;
     }
-    this.player.x = this.resolveWithinCanvas(this.player.x, Canvas.width);
+    player.x = this.resolveWithinCanvas(player.x, Canvas.width);
   }
 
-  private moveYAxis(speed: number): void {
-    if (this.keys.DOWN) {
-      this.player.y += speed;
-    } else if (this.keys.UP) {
-      this.player.y -= speed;
+  private moveYAxis(speed: number, player: Player): void {
+    if (this.keys[player.id].DOWN) {
+      player.y += speed;
+    } else if (this.keys[player.id].UP) {
+      player.y -= speed;
     }
-    this.player.y = this.resolveWithinCanvas(this.player.y, Canvas.height);
+    player.y = this.resolveWithinCanvas(player.y, Canvas.height);
   }
 
   private resolveWithinCanvas(coordinate: number, threshold: number): number {
@@ -57,12 +58,12 @@ export class Animation {
     return coordinate % threshold;
   }
 
-  private setKeys(): Keys {
+  private setKeys(player: any): Keys {
     return {
-      LEFT: this.player.triggerKey[37],
-      UP: this.player.triggerKey[38],
-      RIGHT: this.player.triggerKey[39],
-      DOWN: this.player.triggerKey[40],
+      LEFT: player.triggerKey[37],
+      UP: player.triggerKey[38],
+      RIGHT: player.triggerKey[39],
+      DOWN: player.triggerKey[40],
     };
   }
 }

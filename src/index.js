@@ -29,15 +29,23 @@ function main() {
   socket.on("initilizePlayer", function (player) {
     console.log(`player initilized: `, player);
     players[player.id] = player;
+    // renderStack = [];
+    renderPlayers(ctx, renderStack, players);
     // animate();
-    renderPlayer(ctx, renderStack, players);
   });
 
   socket.on("gameStateChange", async function (player) {
-    scorecard.innerHTML = `<li>${player.name} kills: ${player.kills}</li>`;
-    players[player.id] = player;
-    console.log(players);
-    await render(ctx, "#eee", renderStack);
+    scorecard.innerHTML = '';
+    removeDisconnectedPlayers(players, player);
+    for (var i in player) {
+      const currentPlayer = player[i];
+      players[i] = currentPlayer;
+      scorecard.innerHTML += `<li>${currentPlayer.name}'s kills: ${currentPlayer.kills}</li><br />`;
+    }
+
+    console.log(`${JSON.stringify(players)}`);
+    // renderPlayers(crx, renderStack, players);
+    render(ctx, "#eee", renderStack);
   });
 
   socket.on("knifeCreated", function (knife) {
@@ -49,9 +57,15 @@ function main() {
       renderStack.pop();
   });
 
+  socket.on('disconnect', function (id) {
+    delete players[id];
+  });
+
   const animate = function () {
     requestAnimationFrame(animate);
   };
+
+  // renderPlayers(ctx, renderStack, players);
 
   addEventListener("keydown", keyDownHandelr);
 
@@ -93,7 +107,7 @@ function Communication(socket) {
 //     }
 // }
 
-async function background(context, color) {
+function background(context, color) {
   const img = new Image();
   img.src = "./views/background.png";
   console.log(`rendering background image`);
@@ -104,14 +118,14 @@ async function background(context, color) {
   context.fill();
 }
 
-async function render(context, color, stack) {
-  await background(context, color);
+function render(context, color, stack) {
+  background(context, color);
   for (var i = 0; i < stack.length; i++) {
     stack[i]();
   }
 }
 
-function renderPlayer(context, stack, players) {
+function renderPlayers(context, stack, players) {
   stack.push(function () {
     for (var i in players) {
       context.font = "20px Arial";
@@ -169,4 +183,14 @@ function keyDownHandelr(key) {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function removeDisconnectedPlayers(playersA, playersB) {
+  const keysA = Object.keys(playersA).sort();
+  const keysB = Object.keys(playersB).sort();
+  for (var i = 0; i < keysA.length; i++) {
+    if (!keysB.includes(keysA[i])) {
+      delete playersA[keysA[i]];
+    }
+  }
 }

@@ -1,4 +1,3 @@
-import socketio from "socket.io";
 import { Player } from "./Player";
 import { Knife } from "./Killer";
 import { Game } from "./Game";
@@ -17,18 +16,36 @@ export class Communication {
     this.socket.emit("initilizePlayer", player);
   }
 
-  public stateChange(player: Player): void {
-    this.socket.emit("gameStateChange", player);
-  }
-
-  public sendKnifeShape(knife: Knife): void {
-    if (Game.started && knife.exists) {
-      console.log(`sending knife shape: ${knife.exists}`);
-      this.socket.emit("knifeCreated", knife);
+  public stateChange(players: any, socket: any): void {
+    for (var i in players) {
+      const sock: SocketIOClient.Socket = socket[i];
+      sock.emit('gameStateChange', players);
     }
   }
 
-  public sendKnifeCollision(): void {
-      this.socket.emit('knifeCollision', {});
+  public sendKnifeShape(knife: Knife, players: any, socket: any): void {
+    if (Game.started && knife.exists) {
+      for(var i in players) {
+        if (players[i].knifeSent) {
+          continue;
+        }
+        console.log(`sending knife shape: ${knife.exists}`);
+        const sock: SocketIOClient.Socket = socket[i];
+        sock.emit("knifeCreated", knife);
+        players[i].knifeSent = true;
+      }
+    }
+  }
+
+  public sendKnifeCollision(players: any, socket: any): void {
+    for(var i in players) {
+      const sock: SocketIOClient.Socket = socket[i];
+      sock.emit('knifeCollision', {});
+    }
+  
+  }
+
+  public disconnect(player: Player): void {
+    this.socket.emit('disconnect', player.id);
   }
 }

@@ -31,6 +31,8 @@ server.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );
 } );
 
+let players: any = {};
+let socketList: any = {};
 
 io.on('connection', function(playerCon: SocketIOClient.Socket) {
     playerCon.id = `${Math.random()}`;
@@ -38,26 +40,33 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
     playerCon.connected = true;
     playerCon.disconnected = false;
 
-    const player: Player = new Player(playerCon.id, '#000FF');
-    const animation: Animation = new Animation(player, true);
+    players[playerCon.id] = new Player(playerCon.id);
+    socketList[playerCon.id] = playerCon;
+    Collision.setPlayers(players);
+    const animation: Animation = new Animation(players, true);
     const communication: Communication = new Communication(playerCon);
-    
+
     playerCon.on('name', function(data: any) {
-        player.setName(data.name);
-        console.log(`player ${player.name} is connected`);
-        Game.setGameStarted();
-        Collision.setPlayers(player);
-        communication.sendPlayer(player);
-        communication.sendKnifeShape(Killer.knife);
+        players[playerCon.id].setName(data.name);
+        console.log(`player ${players[playerCon.id].name} is connected`);
+        Game.started = true;
+        communication.sendPlayer(players[playerCon.id]);
+        communication.sendKnifeShape(Killer.knife, players, socketList);
     });
 
     playerCon.on('keyInput', function(keys: TriggerKey) {
-        player.triggerKey = keys;
+        players[playerCon.id].triggerKey = keys;
     });
 
-    setInterval(() => communication.stateChange(player), 40);
+    playerCon.on('disconnect', function (){
+        console.log(`player ${playerCon.id} disconnected`);
+        delete players[playerCon.id];
+        delete socketList[playerCon.id];
+    });
+
+    setInterval(() => communication.stateChange(players, socketList), 40);
     setInterval(() => animation.movePlayer(), 40);
     // setInterval(() => communication.sendKnifeShape(Killer.knife), 40);
-    setInterval(() => Collision.knifeCollision(communication), 40);
+    setInterval(() => Collision.knifeCollision(communication, socketList), 40);
 
 });
