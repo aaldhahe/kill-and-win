@@ -60,13 +60,24 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
 
     playerCon.on('disconnect', function (){
         console.log(`player ${playerCon.id} disconnected`);
+        if (players[playerCon.id].isKiller) {
+            Killer.knife.exists = true;
+            unsetKnifeSent(players);
+        }
         delete players[playerCon.id];
         delete socketList[playerCon.id];
     });
 
-    setInterval(() => communication.stateChange(players, socketList), 55);
-    setInterval(() => animation.movePlayer(), 55);
+    setInterval(() => communication.stateChange(players, socketList), 40);
+    setInterval(() => animation.movePlayer(), 40);
     // setInterval(() => communication.sendKnifeShape(Killer.knife), 40);
-    setInterval(() => Collision.knifeCollision(communication, socketList), 55);
+    setInterval(() => Collision.knifeCollision(communication, socketList), 40);
+    setInterval(() => communication.sendKnifeShape(Killer.knife, players, socketList), 3000);
 
 });
+
+export function unsetKnifeSent(players: any): void {
+    for(var i in players) {
+        players[i].unsetKnifeSent();
+    }
+}

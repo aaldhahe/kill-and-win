@@ -46,4 +46,8 @@ export class Player {
     public setName(name: string): void {
         this.name = name;
     }
+
+    public unsetKnifeSent(): void {
+        this.knifeSent = false;
+    }
 }
