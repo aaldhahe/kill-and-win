@@ -84,7 +84,7 @@ function Connection(url) {
   this.endpoint = url;
 
   Connection.prototype.client = function () {
-    return io(this.endpoint);
+    return io();
   };
 }
 
