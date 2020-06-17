@@ -11,7 +11,7 @@ export interface Knife {
 }
 
 export class Killer {
-  public static killer: Player;
+  public static killer: Player | null;
   public static icon: string = "./views/killer.png";
   public static knife: Knife = Killer.setKnife();
   public static isKillerSet: boolean = false;
@@ -24,14 +24,19 @@ export class Killer {
     return Killer.killer;
   }
 
-  public static unsetKiller(): void {
-    // player.isKiller = false;
-    // player.image = player.getImage();
-    // delete Killer.killer;
-    // return player;
+  public static unsetKiller(players: any): void {
+    console.log(`killer.kills: ${Killer.killer ? Killer.killer.sessionKills : 'no killer'}`);
+    if (!Killer.isKillerSet || (Killer.killer && Killer.killer.sessionKills <= 5)) {
+      return;
+    }
+    console.log('unset killer');
     Killer.killer.isKiller = false;
     Killer.killer.image = Player.getImage();
+    Killer.killer.sessionKills = 0;
     Killer.isKillerSet = false;
+    Killer.knife.exists = true;
+    Killer.killer = null;
+    Killer.unsetKnifeSent(players);
   }
 
   public static setKnife(): Knife {
@@ -44,5 +49,11 @@ export class Killer {
       width: 80,
       height: 61
     };
+  }
+
+  public static unsetKnifeSent(players: any): void {
+    for (var i in players) {
+      players[i].unsetKnifeSent();
+    }
   }
 }

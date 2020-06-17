@@ -20,7 +20,8 @@
     "isolatedModules": true,
     "jsx": "react",
     "incremental": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "strictNullChecks": false
   },
   "include": [
     "./src/**/*"

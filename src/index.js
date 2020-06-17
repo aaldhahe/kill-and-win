@@ -29,9 +29,7 @@ function main() {
   socket.on("initilizePlayer", function (player) {
     console.log(`player initilized: `, player);
     players[player.id] = player;
-    // renderStack = [];
     renderPlayers(ctx, renderStack, players);
-    // animate();
   });
 
   socket.on("gameStateChange", async function (player) {
@@ -43,8 +41,7 @@ function main() {
       scorecard.innerHTML += `<li>${currentPlayer.name}'s kills: ${currentPlayer.kills}</li><br />`;
     }
 
-    console.log(`${JSON.stringify(players)}`);
-    // renderPlayers(crx, renderStack, players);
+    // console.log(`${JSON.stringify(players)}`);
     render(ctx, "#eee", renderStack);
   });
 
@@ -54,7 +51,10 @@ function main() {
   });
 
   socket.on('knifeCollision', function () {
-      renderStack.pop();
+    console.log('knife collision');
+      if (renderStack.length > 1) {
+        renderStack.pop();
+      }
   });
 
   socket.on('disconnect', function (id) {
@@ -65,15 +65,11 @@ function main() {
     requestAnimationFrame(animate);
   };
 
-  // renderPlayers(ctx, renderStack, players);
 
   addEventListener("keydown", keyDownHandelr);
 
   addEventListener("keyup", keyUpHandler);
 
-  // Render this player to UI
-  // console.log(`render player in ui`, players);
-  // renderPlayer(ctx, renderStack, players);
 }
 
 function onload() {
@@ -100,17 +96,10 @@ function Communication(socket) {
   };
 }
 
-// function render (stack) {
-//     clear(ctx,"#eee");
-//     for (var i = 0; i < stack.length; i++) {
-//         stack[i]();
-//     }
-// }
-
 function background(context, color) {
   const img = new Image();
   img.src = "./views/background.png";
-  console.log(`rendering background image`);
+  // console.log(`rendering background image`);
   context.imageSmoothingEnabled = false;
   var pat = context.createPattern(img, "repeat");
   context.rect(1, 0, context.canvas.width, context.canvas.height);
@@ -134,13 +123,9 @@ function renderPlayers(context, stack, players) {
       context.beginPath();
       const img = new Image();
       img.src = players[i].image;
-      console.log(img.src);
+      // console.log(img.src);
       context.drawImage(img, players[i].x, players[i].y, 80, 80);
       context.fill();
-      // img.onload = function() {    TODO: delete
-      //     context.drawImage(img, players[i].x, players[i].y, 80 , 80);
-      //     context.fill();
-      // }
     }
   });
 }

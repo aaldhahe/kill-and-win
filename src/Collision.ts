@@ -1,19 +1,25 @@
-import { Killer } from './Killer';
-import { Game } from './Game';
-import { Communication } from './Communication';
+import { Killer } from "./Killer";
+import { Game } from "./Game";
+import { Communication } from "./Communication";
 
 export class Collision {
   public static players: any;
   public static knifeCollisionHappened: boolean = false;
   public static isCollision: boolean = false;
 
-  public static knifeCollision(communication: Communication, socket: any): boolean {
+  public static knifeCollision(
+    communication: Communication,
+    socket: any
+  ): boolean {
     if (Game.started && Killer.knife.exists) {
       if (Collision.players) {
-        for( var i in Collision.players) {
-          const collision: boolean = Collision.collision(Collision.players[i], Killer.knife);
+        for (var i in Collision.players) {
+          const collision: boolean = Collision.collision(
+            Collision.players[i],
+            Killer.knife
+          );
           if (collision) {
-            console.log("collision");
+            console.log('knife collision');
             Killer.knife.exists = false;
             Killer.setKiller(Collision.players[i]);
             communication.sendKnifeCollision(Collision.players, socket);
@@ -27,6 +33,29 @@ export class Collision {
 
   public static setPlayers(players: any): void {
     Collision.players = players;
+  }
+
+  public static playerCollision(): boolean {
+    if (Game.started && Killer.isKillerSet) {
+      if (Collision.players) {
+        for (var i in Collision.players) {
+          if (!Collision.players[i].isKiller) {
+            const collision: boolean = Collision.collision(
+              Collision.players[i],
+              Killer.killer
+            );
+            if (collision) {
+              console.log('player collision');
+              Killer.killer.kills++;
+              Killer.killer.sessionKills++;
+              Collision.players[i].repositionPlayer();
+              return true;
+            }
+          }
+        }
+      }
+    }
+    return false;
   }
 
   private static collision(shape1: any, shape2: any): boolean {

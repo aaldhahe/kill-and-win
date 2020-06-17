@@ -26,7 +26,7 @@ export class Communication {
   public sendKnifeShape(knife: Knife, players: any, socket: any): void {
     if (Game.started && knife.exists) {
       for(var i in players) {
-        if (players[i].knifeSent) {
+        if (players[i].name !== '' && players[i].knifeSent) {
           continue;
         }
         console.log(`sending knife shape: ${knife.exists}`);

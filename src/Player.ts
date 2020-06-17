@@ -1,3 +1,5 @@
+import { Canvas } from './Canvas';
+
 export interface Keys {
     down: number;
     up: number;
@@ -20,6 +22,7 @@ export class Player {
     public width: number;
     public height: number
     public kills: number;
+    public sessionKills: number;
     public name: string = '';
     public image: string;
     public static icons: string[] = ['./views/running.png', './views/run.png'];
@@ -34,6 +37,7 @@ export class Player {
         this.height = 80;
         this.width = 80;
         this.kills = 0;
+        this.sessionKills = 0;
         this.image = Player.getImage();
         this.triggerKey = { 40: false, 38: false, 39: false, 37: false };
         this.knifeSent = false;
@@ -47,7 +51,12 @@ export class Player {
         this.name = name;
     }
 
-    public unsetKnifeSent(): void {
+    public repositionPlayer(): void {
+        this.x = Math.floor((Math.random() * Canvas.width / 2) % Canvas.width);
+        this.y = Math.floor((Math.random() * Canvas.height / 2) % Canvas.height);
+    }
+
+    public unsetKnifeSent(): void { 
         this.knifeSent = false;
     }
 }

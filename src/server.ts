@@ -62,7 +62,8 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
         console.log(`player ${playerCon.id} disconnected`);
         if (players[playerCon.id].isKiller) {
             Killer.knife.exists = true;
-            unsetKnifeSent(players);
+            Killer.unsetKnifeSent(players);
+            Killer.unsetKiller(players);
         }
         delete players[playerCon.id];
         delete socketList[playerCon.id];
@@ -70,14 +71,15 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
 
     setInterval(() => communication.stateChange(players, socketList), 40);
     setInterval(() => animation.movePlayer(), 40);
-    // setInterval(() => communication.sendKnifeShape(Killer.knife), 40);
     setInterval(() => Collision.knifeCollision(communication, socketList), 40);
+    setInterval(() => Collision.playerCollision(), 40);
     setInterval(() => communication.sendKnifeShape(Killer.knife, players, socketList), 3000);
+    setInterval(() => Killer.unsetKiller(players), 30000);
 
 });
 
-export function unsetKnifeSent(players: any): void {
-    for(var i in players) {
-        players[i].unsetKnifeSent();
-    }
-}
+// export function unsetKnifeSent(players: any): void {
+//     for(var i in players) {
+//         players[i].unsetKnifeSent();
+//     }
+// }
