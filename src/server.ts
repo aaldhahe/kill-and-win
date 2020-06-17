@@ -64,9 +64,9 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
         delete socketList[playerCon.id];
     });
 
-    setInterval(() => communication.stateChange(players, socketList), 40);
-    setInterval(() => animation.movePlayer(), 40);
+    setInterval(() => communication.stateChange(players, socketList), 55);
+    setInterval(() => animation.movePlayer(), 55);
     // setInterval(() => communication.sendKnifeShape(Killer.knife), 40);
-    setInterval(() => Collision.knifeCollision(communication, socketList), 40);
+    setInterval(() => Collision.knifeCollision(communication, socketList), 55);
 
 });

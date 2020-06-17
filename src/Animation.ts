@@ -9,7 +9,7 @@ export interface Keys {
 }
 
 export class Animation {
-  public killerSpeed: number = 6;
+  public killerSpeed: number = 7;
   public normalSpeed: number = 5;
   public gameStarted: boolean;
   public keys: any;
@@ -34,21 +34,23 @@ export class Animation {
   }
 
   private moveXAxis(speed: number, player: Player): void {
+    let newLocation: number = player.x;
     if (this.keys[player.id].RIGHT) {
-      player.x += speed;
+      newLocation += speed;
     } else if (this.keys[player.id].LEFT) {
-      player.x -= speed;
+      newLocation -= speed;
     }
-    player.x = this.resolveWithinCanvas(player.x, Canvas.width);
+    player.x = this.resolveWithinCanvas(newLocation, Canvas.width);
   }
 
   private moveYAxis(speed: number, player: Player): void {
+    let newLocation: number = player.y;
     if (this.keys[player.id].DOWN) {
-      player.y += speed;
+      newLocation += speed;
     } else if (this.keys[player.id].UP) {
-      player.y -= speed;
+      newLocation -= speed;
     }
-    player.y = this.resolveWithinCanvas(player.y, Canvas.height);
+    player.y = this.resolveWithinCanvas(newLocation, Canvas.height);
   }
 
   private resolveWithinCanvas(coordinate: number, threshold: number): number {
