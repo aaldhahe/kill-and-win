@@ -25,7 +25,7 @@ export class Player {
     public sessionKills: number;
     public name: string = '';
     public image: string;
-    public static icons: string[] = ['./views/running.png', './views/run.png'];
+    public static icons: string[] = ['./views/running.png', './views/run.png', './views/run1.png', './views/run2.png'];
     public triggerKey: TriggerKey;
     public knifeSent: boolean;
 
@@ -44,7 +44,7 @@ export class Player {
     }
 
     public static getImage(): string {
-        return Player.icons[Math.floor(Math.random() * (1 - 0 + 1)) + 0];
+        return Player.icons[Math.floor(Math.random() * (1 - 0 + 3)) + 0];
     }
 
     public setName(name: string): void {
