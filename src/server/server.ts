@@ -36,7 +36,6 @@ let socketList: any = {};
 
 io.on('connection', function(playerCon: SocketIOClient.Socket) {
     playerCon.id = `${Math.random()}`;
-    console.log(`player ${playerCon.id} connected`);
     playerCon.connected = true;
     playerCon.disconnected = false;
 

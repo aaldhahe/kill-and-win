@@ -25,7 +25,6 @@ export class Killer {
   }
 
   public static unsetKiller(players: any): void {
-    console.log(`killer.kills: ${Killer.killer ? Killer.killer.sessionKills : 'no killer'}`);
     if (!Killer.isKillerSet || (Killer.killer && Killer.killer.sessionKills <= 5)) {
       return;
     }
