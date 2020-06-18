@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 8080; // default port to listen
 
 const NODE_ENV: string | undefined = process.env.NODE_ENV;
-const serveApp: string = NODE_ENV === 'production' ? '../dist/src' : './';
+const serveApp: string = NODE_ENV === 'production' ? '../dist/src' : '../client';
 
 app.use(express.static(path.join(__dirname, serveApp)));
 
@@ -42,14 +42,14 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
 
     players[playerCon.id] = new Player(playerCon.id);
     socketList[playerCon.id] = playerCon;
+    Game.isGameStarted(players);
     Collision.setPlayers(players);
     const animation: Animation = new Animation(players, true);
     const communication: Communication = new Communication(playerCon);
 
     playerCon.on('name', function(data: any) {
         players[playerCon.id].setName(data.name);
-        console.log(`player ${players[playerCon.id].name} is connected`);
-        Game.started = true;
+        console.log(`player ${players[playerCon.id].name} is connected`); 
         communication.sendPlayer(players[playerCon.id]);
         communication.sendKnifeShape(Killer.knife, players, socketList);
     });
@@ -69,17 +69,12 @@ io.on('connection', function(playerCon: SocketIOClient.Socket) {
         delete socketList[playerCon.id];
     });
 
-    setInterval(() => communication.stateChange(players, socketList), 40);
-    setInterval(() => animation.movePlayer(), 40);
-    setInterval(() => Collision.knifeCollision(communication, socketList), 40);
-    setInterval(() => Collision.playerCollision(), 40);
+    setInterval(() => communication.stateChange(players, socketList), 55);
+    setInterval(() => animation.movePlayer(), 55);
+    setInterval(() => Collision.knifeCollision(communication, socketList), 55);
+    setInterval(() => Collision.playerCollision(), 55);
     setInterval(() => communication.sendKnifeShape(Killer.knife, players, socketList), 3000);
     setInterval(() => Killer.unsetKiller(players), 30000);
 
 });
 
-// export function unsetKnifeSent(players: any): void {
-//     for(var i in players) {
-//         players[i].unsetKnifeSent();
-//     }
-// }

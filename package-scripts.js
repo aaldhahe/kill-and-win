@@ -11,7 +11,7 @@ const tsc = {
 };
 
 const run = {
-    default: `NODE_ENV=development ts-node src/server.ts`
+    default: `NODE_ENV=development ts-node src/server/server.ts`
 };
 
 const webpack = {

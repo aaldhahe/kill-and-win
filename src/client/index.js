@@ -41,7 +41,6 @@ function main() {
       scorecard.innerHTML += `<li>${currentPlayer.name}'s kills: ${currentPlayer.kills}</li><br />`;
     }
 
-    // console.log(`${JSON.stringify(players)}`);
     render(ctx, "#eee", renderStack);
   });
 
@@ -99,7 +98,6 @@ function Communication(socket) {
 function background(context, color) {
   const img = new Image();
   img.src = "./views/background.png";
-  // console.log(`rendering background image`);
   context.imageSmoothingEnabled = false;
   var pat = context.createPattern(img, "repeat");
   context.rect(1, 0, context.canvas.width, context.canvas.height);
@@ -123,7 +121,6 @@ function renderPlayers(context, stack, players) {
       context.beginPath();
       const img = new Image();
       img.src = players[i].image;
-      // console.log(img.src);
       context.drawImage(img, players[i].x, players[i].y, 80, 80);
       context.fill();
     }
