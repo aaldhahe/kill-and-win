@@ -67,7 +67,7 @@
   "scripts": {
     "start": "nps",
     "app": "NODE_ENV=development ts-node src/server/server.ts",
-    "heroku-postbuild": "node scripts/build.js && tsc"
+    "heroku-postbuild": "tsc"
   },
   "eslintConfig": {
     "extends": "react-app"
