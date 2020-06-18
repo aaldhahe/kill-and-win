@@ -271,29 +271,59 @@
         "signature": "19c6c92e437feefa4f952c011e64ee30be48f8ec7b4aeddf46447278f7626e26",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/socket.io-client/index.d.ts": {
-        "version": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
-        "signature": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
-        "affectsGlobalScope": true
-      },
-      "../src/app.tsx": {
-        "version": "20396e670cf19a1f8f2fe7d8c013fa2cc6bbcc5d053a381925b1797793c83618",
-        "signature": "87a81e86c4a859f500b4a3b1db74834772429b9059f2efacdd0cde43cc283d11",
-        "affectsGlobalScope": false
-      },
       "../src/app.test.tsx": {
         "version": "c83538ab4ce80454c5c179c4bda19a4cebc7df35634fb37891190956bbd8eb22",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
-      "../src/connection.ts": {
-        "version": "4f02a826a4535e4b3293f033f5e300fdd5c4b3fdd71f33af2187b9df6aad0e9d",
-        "signature": "35aa2582dcaf22aa54e2af8618dcce944b449aa07990c2ee7aba1d8f89d26df6",
+      "../src/client/index.js": {
+        "version": "f3913ce9640db9898c87accfdd94b90d1dfc527c7657c478f3c5e5c30c219fa4",
+        "signature": "c76125ea9c11b8a383f0dcfdfb45a2fa02f2ca5ad80592992f92af717ba2d13d",
+        "affectsGlobalScope": true
+      },
+      "../src/server/canvas.ts": {
+        "version": "0342b1b9ba6a04103b25651d461dfa40b30f7df872dddc4982a0fb5bc09c9572",
+        "signature": "f89f58598d45119f85d8e74f701b9e004987cf03a0b2f8642f04ad8ec96fbca6",
         "affectsGlobalScope": false
       },
-      "../src/index.tsx": {
-        "version": "e2c52f73408a8902a631872cab1040a8765a3860fa7c6f818df9d2073d5250bb",
-        "signature": "f9d7caa176b09a1a7e40430497986a555126b78ea2078b72d7d2daebedcdd35f",
+      "../src/server/player.ts": {
+        "version": "4549d53b107af2d5fe37b911b2fd000bbdc1345699351ed9e86cd72e2f7155f9",
+        "signature": "74643b4963bdaac68b6edb54aa9d73c62c7917541b0a505a68a36b916662f6c4",
+        "affectsGlobalScope": false
+      },
+      "../src/server/animation.ts": {
+        "version": "5153a655f5844ee77dd51ef6034c7080450d653707b2bff0783373749e6d219f",
+        "signature": "41b006c28b11dc22c289cc384658280deeb60bca5cb24c1b993cbaaef0b052bf",
+        "affectsGlobalScope": false
+      },
+      "../src/server/killer.ts": {
+        "version": "1486d02f52af0b83ece5927385ba7996cce686fcc3eb48ae2b039db5b01da902",
+        "signature": "1cae103f75ed30b3bb258a119182cc1f22985d9673907d25be19886aa609d348",
+        "affectsGlobalScope": false
+      },
+      "../src/server/game.ts": {
+        "version": "a30c51e5e1866559adcf060608984e01060bb822dca4d82d0516428eddc0aecf",
+        "signature": "1665e9c44f03e7adea6ef1c48bd6bd0f3d692df21ab070c1a31d840bacbc3866",
+        "affectsGlobalScope": false
+      },
+      "../src/server/communication.ts": {
+        "version": "2ae9b2950818bd545cf1178707c7bcfd0e3e6c82f45a86c118f372b5e0b76207",
+        "signature": "e08ba1f776752f4d1172ecbe9b92ec4cab1bb6dbf622926218ce098c46ad2bcd",
+        "affectsGlobalScope": false
+      },
+      "../src/server/collision.ts": {
+        "version": "126ce3f247c25f65a92d695fe67014bef7cb2c43b9420d0d3c3c55dcd31d48dc",
+        "signature": "9f045ed2f3f3ecced1032c0eeb9854145f63d7289fe568a39d1f07664887a7ce",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/socket.io-client/index.d.ts": {
+        "version": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
+        "signature": "829cee346cb86de54e7a633a42d0ea1f5b3408f2de26759b1084e6e9ffe9fbcc",
+        "affectsGlobalScope": true
+      },
+      "../src/server/connection.ts": {
+        "version": "4f02a826a4535e4b3293f033f5e300fdd5c4b3fdd71f33af2187b9df6aad0e9d",
+        "signature": "35aa2582dcaf22aa54e2af8618dcce944b449aa07990c2ee7aba1d8f89d26df6",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/node/globals.d.ts": {
@@ -551,16 +581,6 @@
         "signature": "d522314e80ed71b57e3c2939d3c9594eaae63a4adf028559e6574f6b270b0fee",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/react-dom/index.d.ts": {
-        "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
-        "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
-        "affectsGlobalScope": false
-      },
-      "../src/react-app-env.d.ts": {
-        "version": "da40c88299fc9d260720015cb88f1c406c37cd54c06c1b554accc69aff8bca6c",
-        "signature": "da40c88299fc9d260720015cb88f1c406c37cd54c06c1b554accc69aff8bca6c",
-        "affectsGlobalScope": true
-      },
       "../node_modules/@types/range-parser/index.d.ts": {
         "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
         "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
@@ -611,24 +631,9 @@
         "signature": "5da61a50104ace8da85aed7e4fbf1258b34d8f6b6b5058b42cc4bfe257e86ba8",
         "affectsGlobalScope": false
       },
-      "../src/server.ts": {
-        "version": "ae42f971d54de5547847b7dbf1dbf104a9aa797ae2cfb71004c501b2710fb728",
+      "../src/server/server.ts": {
+        "version": "ba4819ba35d79855d1a5b7696fa035994aadcf8a390602e27f421d21f10de0ba",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/serviceworker.ts": {
-        "version": "ebb27b5ceb59dd94dff75c64f16c09e847c5e6f62e2967c7c4d61fc89966396a",
-        "signature": "10ba3724f41566bd123cda62a0d35b7744ceeb5e2cd991ffb6977649fe5a05c7",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@testing-library/jest-dom/extend-expect.d.ts": {
-        "version": "87a5b36f699908dae993f9a5884f0e498cfaab47f8ada810a8f335359ff8f76f",
-        "signature": "87a5b36f699908dae993f9a5884f0e498cfaab47f8ada810a8f335359ff8f76f",
-        "affectsGlobalScope": true
-      },
-      "../src/setuptests.ts": {
-        "version": "bb69f5288c24cd7f5322768e21408b6d69a25a16b052e005c1f2b4d75370fb80",
-        "signature": "73fcb74c1fec095a73f0bf6d32005a35dafd562afd06cbac3d506df18423270d",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -721,6 +726,11 @@
         "signature": "f9a2dd6a6084665f093ed0e9664b8e673be2a45e342a59dd4e0e4e552e68a9ad",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/react-dom/index.d.ts": {
+        "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@types/stack-utils/index.d.ts": {
         "version": "41422586881bcd739b4e62d9b91cd29909f8572aa3e3cdf316b7c50f14708d49",
         "signature": "41422586881bcd739b4e62d9b91cd29909f8572aa3e3cdf316b7c50f14708d49",
@@ -752,12 +762,14 @@
       "allowSyntheticDefaultImports": true,
       "strict": true,
       "forceConsistentCasingInFileNames": true,
-      "module": 3,
+      "module": 1,
       "moduleResolution": 2,
+      "resolveJsonModule": true,
       "isolatedModules": true,
       "jsx": 2,
       "incremental": true,
       "sourceMap": true,
+      "strictNullChecks": false,
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -769,12 +781,6 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@babel/types/lib/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@testing-library/jest-dom/extend-expect.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -1776,42 +1782,75 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/testing-library__react/index.d.ts",
-        "../src/app.tsx"
+        "../node_modules/@types/testing-library__react/index.d.ts"
       ],
-      "../src/app.tsx": [
+      "../src/client/index.js": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/server/animation.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/socket.io-client/index.d.ts",
-        "../src/react-app-env.d.ts"
+        "../src/server/canvas.ts",
+        "../src/server/player.ts"
       ],
-      "../src/connection.ts": [
+      "../src/server/canvas.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/server/collision.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/server/communication.ts",
+        "../src/server/game.ts",
+        "../src/server/killer.ts"
+      ],
+      "../src/server/communication.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/server/game.ts",
+        "../src/server/killer.ts",
+        "../src/server/player.ts"
+      ],
+      "../src/server/connection.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/socket.io-client/index.d.ts"
       ],
-      "../src/index.tsx": [
+      "../src/server/game.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/server/killer.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/connection.ts"
+        "../src/server/canvas.ts",
+        "../src/server/player.ts"
       ],
-      "../src/react-app-env.d.ts": [
+      "../src/server/player.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/ts3.7/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/react-dom/index.d.ts",
-        "../node_modules/@types/react/index.d.ts"
+        "../src/server/canvas.ts"
       ],
-      "../src/server.ts": [
+      "../src/server/server.ts": [
         "../node_modules/@types/express/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/http.d.ts",
@@ -1819,19 +1858,13 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/socket.io/index.d.ts"
-      ],
-      "../src/serviceworker.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../src/setuptests.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/socket.io/index.d.ts",
+        "../src/server/animation.ts",
+        "../src/server/collision.ts",
+        "../src/server/communication.ts",
+        "../src/server/game.ts",
+        "../src/server/killer.ts",
+        "../src/server/player.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1843,12 +1876,6 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@babel/types/lib/index.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@testing-library/jest-dom/extend-expect.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -2844,20 +2871,20 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/react-app-env.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/ts3.7/index.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/react-dom/index.d.ts",
-        "../node_modules/@types/react/index.d.ts"
+      "../src/server/collision.ts": [
+        "../src/server/communication.ts"
+      ],
+      "../src/server/communication.ts": [
+        "../src/server/killer.ts",
+        "../src/server/player.ts"
+      ],
+      "../src/server/killer.ts": [
+        "../src/server/player.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
-      "../node_modules/@testing-library/jest-dom/extend-expect.d.ts",
       "../node_modules/@types/babel__core/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__template/index.d.ts",
@@ -2994,14 +3021,37 @@
       "../node_modules/typescript/lib/lib.es2020.bigint.d.ts",
       "../node_modules/typescript/lib/lib.es5.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "../src/app.test.tsx",
-      "../src/app.tsx",
-      "../src/connection.ts",
-      "../src/index.tsx",
-      "../src/react-app-env.d.ts",
-      "../src/server.ts",
-      "../src/serviceworker.ts",
-      "../src/setuptests.ts"
+      [
+        "../src/app.test.tsx",
+        [
+          {
+            "file": "../src/app.test.tsx",
+            "start": 96,
+            "length": 7,
+            "messageText": "Cannot find module './App' or its corresponding type declarations.",
+            "category": 1,
+            "code": 2307
+          },
+          {
+            "file": "../src/app.test.tsx",
+            "start": 259,
+            "length": 17,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'toBeInTheDocument' does not exist on type 'JestMatchersShape<Matchers<void, HTMLElement>, Matchers<Promise<void>, HTMLElement>>'."
+          }
+        ]
+      ],
+      "../src/client/index.js",
+      "../src/server/animation.ts",
+      "../src/server/canvas.ts",
+      "../src/server/collision.ts",
+      "../src/server/communication.ts",
+      "../src/server/connection.ts",
+      "../src/server/game.ts",
+      "../src/server/killer.ts",
+      "../src/server/player.ts",
+      "../src/server/server.ts"
     ]
   },
   "version": "3.9.5"
