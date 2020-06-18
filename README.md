@@ -14,5 +14,5 @@ this is a multi-player online game written in JavaScript for client side and Typ
 - run `npm start startDev` and game will start a dev build
 - go to [localhost:8080](http://localhost:8080)
 - then you will be prompted to enter your name and start playing
-- **Note**: Game starts when there is two or more players online
+- **Note**: Game starts when there are two or more players online
 
