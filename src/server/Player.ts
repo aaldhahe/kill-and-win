@@ -1,12 +1,5 @@
 import { Canvas } from './Canvas';
 
-export interface Keys {
-    down: number;
-    up: number;
-    right: number;
-    left: number;
-}
-
 export interface TriggerKey {
     40: boolean,
     38: boolean,

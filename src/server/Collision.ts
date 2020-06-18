@@ -58,7 +58,7 @@ export class Collision {
     return false;
   }
 
-  private static collision(shape1: any, shape2: any): boolean {
+  public static collision(shape1: any, shape2: any): boolean {
     Collision.isCollision =
       shape1.x < shape2.x + shape2.width - 20 &&
       shape1.x + shape1.width > shape2.x &&

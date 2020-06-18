@@ -23,6 +23,12 @@ const startDev = {
     default: `nodemon`
 };
 
+const test = {
+    defaul: 'jest',
+    jest: 'jest',
+    coverage: 'jest --coverage'
+}
+
 const reactscripts = {
     start: `react-scripts start`,
     build: `react-scripts build`,
@@ -37,6 +43,7 @@ module.exports = () => ({
         run,
         startDev,
         reactscripts,
-        webpack
+        webpack,
+        test
     }
 });

@@ -64,6 +64,9 @@
   },
   "devDependencies": {
     "jest": "^26.0.0",
+    "jest-html-reporters": "^2.0.0",
+    "mock-socket": "^9.0.3",
+    "socket.io-mock": "^1.2.4",
     "ts-jest": "^26.1.0"
   },
   "scripts": {
