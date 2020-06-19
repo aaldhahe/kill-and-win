@@ -16,3 +16,8 @@ this is a multi-player online game written in JavaScript for client side and Typ
 - then you will be prompted to enter your name and start playing
 - **Note**: Game starts when there are two or more players online
 
+## Run tests
+- run `npm start test.jest` this runs tests and generates report in reports folder
+- run `npm start test.converage` this runs tests, generates reports, and run code coverage tool and generates analysis in coverage folder
+
+
