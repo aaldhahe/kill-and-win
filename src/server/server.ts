@@ -16,14 +16,10 @@ const NODE_ENV: string | undefined = process.env.NODE_ENV;
 const serveApp: string = NODE_ENV === 'production' ? '../dist/src' : '../client';
 
 app.use(express.static(path.join(__dirname, serveApp)));
-
-
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, `${serveApp}/views`, 'index.html'));
 });
-
 const server = http.createServer(app);
-
 const io = socketio(server);
 
 // start the Express server

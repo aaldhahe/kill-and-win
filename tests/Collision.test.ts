@@ -111,14 +111,7 @@ test('detect player collision with other player when game has no players', () =>
     expect(playerCollision).toBeFalsy();
 }); 
 
-test('detect player collision with other player when game has no killer', () => {
-    Game.started = true;
-    Killer.isKillerSet = false;
-    const playerCollision: boolean = Collision.playerCollision();
-    expect(playerCollision).toBeFalsy();
-}); 
-
-test('detect player collision with other killer', () => {
+test('detect player collision with killer', () => {
     Game.started = true;
     Killer.isKillerSet = true;
     const player1: Player = new Player('testKiller');

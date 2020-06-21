@@ -33,7 +33,7 @@ test('unset killer when there isnt a killer', () => {
     expect(Killer.isKillerSet).toBe(false);
 });
 
-test('unset killer maximum session kills', () => {
+test('unset killer with maximum session kills', () => {
     const player: Player = new Player('killer2343');
     player.sessionKills = 6;
     Killer.setKiller(player);
@@ -61,7 +61,7 @@ test('unset killer with sent knife icon', () => {
     expect(player.knifeSent).toBe(false);
 });
 
-test('send knife for players within canvas', () => {
+test('set knife and ensure x and y axis are within canvas', () => {
     const knife: Knife = Killer.setKnife();
     
     expect(knife).toBeDefined();
